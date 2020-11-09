@@ -1,0 +1,42 @@
+# Use root/example as user/password credentials
+version: '3.3'
+
+networks:
+    netBackEnd:
+        ipam:
+            driver: default
+            config:
+                 - subnet: 192.168.0.0/24
+services:
+  mongo-db:
+    image: mongo
+    container_name: cnt_mongo
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: dbArland
+      MONGO_INITDB_ROOT_USERNAME: maguilarac
+      MONGO_INITDB_ROOT_PASSWORD: pwdmaguilarac
+    ports:
+      - 27017:27017
+    volumes:
+      - ./script1_creacion_usuario.js:/docker-entrypoint-initdb.d/script1_creacion_usuario.js:ro
+      - ./script2_creacion_coleccion.js:/docker-entrypoint-initdb.d/script2_creacion_coleccion.js:ro
+      - ./script4_carga_productos.js:/docker-entrypoint-initdb.d/script4_carga_productos.js:ro
+      - ./productos_inicial.json:/docker-entrypoint-initdb.d/productos_inicial.json:ro
+      - ./mongo-volume:/data/db 
+    networks:
+      netBackEnd:
+        ipv4_address: 192.168.0.4
+        
+  mongo-express:
+    image: mongo-express
+    container_name: cnt_mongo-express
+    restart: always
+    ports:
+      - 9081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: maguilarac
+      ME_CONFIG_MONGODB_ADMINPASSWORD: pwdmaguilarac
+    networks:
+      netBackEnd:
+        ipv4_address: 192.168.0.6
