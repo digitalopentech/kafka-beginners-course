@@ -3,6 +3,10 @@ dia 02 Dez as 13:30
 Oftalmoclinica
 Rua silva cardoso 125 - sala 409
 
+Maria Emilia
+1 dez as 08:00
+av maria tereza 260 bloco 2 225
+
 # Replace "kafka-consumer-groups" 
 # by "kafka-consumer-groups.sh" or "kafka-consumer-groups.bat" based on your system # (or bin/kafka-consumer-groups.sh or bin\windows\kafka-consumer-groups.bat if you didn't setup PATH / Environment variables)
 
