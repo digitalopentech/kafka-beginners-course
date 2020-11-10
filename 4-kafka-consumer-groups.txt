@@ -1,4 +1,9 @@
- # Replace "kafka-consumer-groups" 
+Dr Patricia
+dia 02 Dez as 13:30
+Oftalmoclinica
+Rua silva cardoso 125 - sala 409
+
+# Replace "kafka-consumer-groups" 
 # by "kafka-consumer-groups.sh" or "kafka-consumer-groups.bat" based on your system # (or bin/kafka-consumer-groups.sh or bin\windows\kafka-consumer-groups.bat if you didn't setup PATH / Environment variables)
 
 # documentation for the command 
